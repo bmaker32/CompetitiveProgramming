@@ -1,0 +1,17 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        lst=[word for word in s.split()]
+        lst2=[word for word in s.split()]
+        print(len(lst2))
+        for i in lst:
+            letter= list(i)
+            number = int(letter[-1])-1
+            letter.pop()
+            str=""
+            letter= str.join(letter)
+            lst2[number]=letter
+            print(lst2)
+            min_num=0 
+        str=" "
+        lst2=str.join(lst2)
+        return lst2
