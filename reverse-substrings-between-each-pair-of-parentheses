@@ -1,0 +1,38 @@
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        stack=[]
+        letter=[]
+        lookup={")":"("}
+        for i in s:
+            if i != ')':
+                stack.append(i)
+            else:
+                for j in range(len(stack)-1,-1,-1):
+                    
+                    if stack[j]=='(':
+                        stack.pop()
+                        for j in letter:    
+                            stack.append(j)
+                        letter=[]
+                        
+                        break
+
+                    elif stack[j]!='(':
+                        letter.append(stack.pop())
+                        
+                        
+        stt=''
+        stack=stt.join(stack)              
+                        
+        return stack
+        
+            
+# obj=Solution()
+# print(obj.reverseParentheses("(u(love)i)"))             
+                
+            
+        
+            
+                    
+                
+            
