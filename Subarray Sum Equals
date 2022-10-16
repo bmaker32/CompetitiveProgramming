@@ -1,0 +1,18 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        leng=len(nums)
+       
+        dicti={0:1}
+        counter=0
+        s=0
+        
+        for i in nums:
+            s+=i
+            if (s-k) in dicti:
+                counter+=dicti[s-k]
+            if s in dicti:
+                dicti[s]+=1
+            else:
+                dicti[s]=1
+        return counter
+        
