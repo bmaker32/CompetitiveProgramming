@@ -1,0 +1,10 @@
+class Solution:
+    def chalkReplacer(self, chalk: list[int], k: int) -> int:
+        it=int(k/sum(chalk))
+        left=k%sum(chalk)
+        if left==0:
+            return 0
+        for i in range(len(chalk)):
+            if chalk[i]>left:
+                return i
+            left-=chalk[i]
