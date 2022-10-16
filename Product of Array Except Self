@@ -1,0 +1,13 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        leng=len(nums)
+        pres=[1]*leng
+        pf=1    
+        pp=1
+        for i in range(0,leng):
+            pres[i] *=pf
+            pf*=nums[i]
+        for j in range(leng-1,-1,-1):
+            pres[j]*=pp
+            pp*=nums[j]  
+        return pres
