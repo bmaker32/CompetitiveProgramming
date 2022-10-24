@@ -1,0 +1,10 @@
+valleys, height = 0, 0
+    for step in path:
+        prev_height = height
+        
+        if step == 'D': height -= 1
+        else: height += 1
+        
+        if prev_height == 0 and height == -1: valleys += 1
+        
+    return valleys
